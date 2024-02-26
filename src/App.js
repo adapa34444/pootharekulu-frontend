@@ -82,7 +82,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Welcome to the delicious atreyapuram pootharekulu world</h1>
+        <h1>Welcome to the delicious Atreyapuram Pootharekulu world</h1>
       </header>
       <main>
         <section className="offers">

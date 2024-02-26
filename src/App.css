@@ -1,3 +1,4 @@
+/* Base styles */
 .App {
   text-align: center;
   background-color: #e5ffe5; /* Light green background */
@@ -45,7 +46,6 @@
 }
 
 .video-wrapper {
-  position: fixed;
   bottom: 20px; /* Adjust as needed */
   left: 20px; /* Adjust as needed */
   z-index: 999; /* Ensure the video stays above other content */
@@ -55,7 +55,7 @@
 .putharekulu-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end; /* Align images to the right side */
+  justify-content: flex-end; /* Align items to the right */
 }
 
 .putharekulu-item {
