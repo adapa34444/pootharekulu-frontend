@@ -11,7 +11,6 @@ pipeline {
             steps {
                 // Pull the latest changes from the GitHub repository
                 script {
-                    // No sudo needed for git command
                     git branch: 'master', credentialsId: '27bb0141-ff55-4ca5-8bec-958b59c0ca5e', url: 'https://github.com/adapa34444/pootharekulu-frontend.git'
                 }
             }
@@ -21,8 +20,7 @@ pipeline {
             steps {
                 // Build Docker image
                 script {
-                    // Use sudo for docker build command
-                    sh "sudo docker build -t $DOCKER_IMAGE_TAG ."
+                    sh "docker build -t $DOCKER_IMAGE_TAG ."
                 }
             }
         }
@@ -31,10 +29,9 @@ pipeline {
             steps {
                 // Push Docker image to Docker Hub
                 script {
-                    // Use sudo for docker login and push commands
                     withCredentials([usernamePassword(credentialsId: 'f6f8336b-ffe6-42c1-811b-cb877302d5df', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
-                        sh "sudo docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD"
-                        sh "sudo docker push $DOCKER_IMAGE_TAG"
+                        sh "docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD"
+                        sh "docker push $DOCKER_IMAGE_TAG"
                     }
                 }
             }
