@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './App.css'; // Assuming you have a custom CSS file for styling
+import Cart from './Cart'; // Import the Cart component
 
 function App() {
   // Sample offers data
@@ -79,10 +80,19 @@ function App() {
     autoplaySpeed: 2000, // Adjust the speed of scrolling
   };
 
+  const [showCart, setShowCart] = useState(false);
+
+  const toggleCart = () => {
+    setShowCart(!showCart);
+  };
+
   return (
     <div className="App">
       <header>
         <h1>Welcome to the delicious Atreyapuram Pootharekulu world</h1>
+        <button className="cart-icon" onClick={toggleCart}>
+          <img src="/cart-icon.png" alt="Cart" /> {/* Updated src attribute */}
+        </button>
       </header>
       <main>
         <section className="offers">
@@ -112,6 +122,7 @@ function App() {
                 <img src={item.image} alt={item.name} />
                 <h3>{item.name}</h3>
                 <p>{item.price}</p>
+                <button>Add to Cart</button> {/* Add to Cart button */}
               </div>
             ))}
           </div>
@@ -145,6 +156,8 @@ function App() {
       <footer>
         <p>Copyright &copy; 2024 Pootharekulu Shop. All rights reserved.</p>
       </footer>
+      {/* Display the Cart component */}
+      <Cart showCart={showCart} putharekulu={putharekulu} />
     </div>
   );
 }
