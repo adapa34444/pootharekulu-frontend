@@ -1,7 +1,7 @@
 /* Base styles */
 .App {
   text-align: center;
-  background-color: #C4DFE6; /* Change background color to #C4DFE6 */
+  background-color: #800080; /* Change background color to #800080 */
 }
 
 .App-logo {
@@ -60,8 +60,6 @@
 
 .putharekulu-item {
   margin: 20px;
-  background-color: #800080; /* Set background color to #800080 */
-  padding: 10px; /* Add padding for better visibility */
 }
 
 .putharekulu-item img {
