@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKER_IMAGE_TAG = "adapa34444/pootharekulu-frontend:${BUILD_NUMBER}"
         DOCKER_CONTAINER_NAME = "pootharekulu-container"
-        PORT_MAPPING = "3000:3000"
+        PORT_MAPPING = "3001:3001"
     }
 
     stages {
