@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE_TAG = "adapa34444/pootharekulu-frontend:${BUILD_NUMBER}"
-        DOCKER_CONTAINER_NAME = "pootharekulu-container"
+        DOCKER_IMAGE_TAG = "adapa34444/pootharekuluft:${BUILD_NUMBER}"
+        DOCKER_CONTAINER_NAME = "pootharekuluft"
         PORT_MAPPING = "3001:3001"
     }
 
